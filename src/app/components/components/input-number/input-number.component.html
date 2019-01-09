@@ -1,0 +1,6 @@
+<div class="input-number basic">
+  <nz-input-number [(ngModel)]="demoValue" [nzMin]="1" [nzMax]="10" [nzStep]="0.1" [nzDisabled]="isDisabled"></nz-input-number>
+  <button nz-button (click)="isDisabled = !isDisabled">Toggle Disabled</button>
+</div>
+
+<p>{{demoValue}}</p>

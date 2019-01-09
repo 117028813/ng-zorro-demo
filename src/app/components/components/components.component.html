@@ -1,0 +1,18 @@
+<nz-layout>
+  <nz-sider [nzWidth]="200">
+    <ul nz-menu nzMode="inline">
+      <li nz-submenu *ngFor="let item of list">
+        <span title>{{item.type}}</span>
+        <ul>
+          <li nz-menu-item *ngFor="let listItem of item.list" routerLinkActive="ant-menu-item-selected">
+            <a [routerLink]="listItem.path">{{listItem.name}}</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>
+
+  <nz-content>
+    <router-outlet></router-outlet>
+  </nz-content>
+</nz-layout>

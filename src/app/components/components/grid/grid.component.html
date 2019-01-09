@@ -1,0 +1,36 @@
+<div nz-row class="basic">
+  <div nz-col nzSpan="12">col-12</div>
+  <div nz-col nzSpan="12">col-12</div>
+</div>
+
+<div nz-row nzGutter="8" class="gutter">
+  <div nz-col nzSpan="6">
+    <div class="gutter-box">col-6</div>
+  </div>
+  <div nz-col nzSpan="6">
+    <div class="gutter-box">col-6</div>
+  </div>
+  <div nz-col nzSpan="6">
+    <div class="gutter-box">col-6</div>
+  </div>
+  <div nz-col nzSpan="6">
+    <div class="gutter-box">col-6</div>
+  </div>
+</div>
+
+<div class="offset" nz-row>
+  <div nz-col nzSpan="8">col-8</div>
+  <div nz-col nzSpan="8" nzOffset="8">col-8 offset-8</div>
+</div>
+
+<div class="order" nz-row>
+  <div nz-col [nzSpan]="18" [nzPush]="6">col-18 push-6</div>
+  <div nz-col [nzSpan]="6" [nzPull]="18">col-6 pull-18</div>
+</div>
+
+<div class="flex" nz-row nzType="flex" nzJustify="space-between" nzAlign="middle">
+  <div nz-col nzSpan="4" style="height: 100px;">col-4</div>
+  <div nz-col nzSpan="4" style="height: 80px;">col-4</div>
+  <div nz-col nzSpan="4" style="height: 50px;">col-4</div>
+  <div nz-col nzSpan="4" style="height: 70px;">col-4</div>
+</div>

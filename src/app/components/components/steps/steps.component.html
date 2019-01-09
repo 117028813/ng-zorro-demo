@@ -1,0 +1,43 @@
+<div class="steps">
+  <nz-steps>
+    <nz-step nzTitle="Finished" nzDescription="This is a Description"></nz-step>
+    <nz-step nzTitle="In Progress" nzDescription="This is a description"></nz-step>
+    <nz-step nzTitle="Waiting" nzDescription="This is a description"></nz-step>
+  </nz-steps>
+</div>
+
+<div class="steps">
+  <nz-steps nzSize="small" [nzCurrent]="1">
+    <nz-step nzTitle="Finished"></nz-step>
+    <nz-step nzTitle="In Progress"></nz-step>
+    <nz-step nzTitle="Waiting"></nz-step>
+  </nz-steps>
+</div>
+
+<div class="steps">
+  <nz-steps>
+    <nz-step nzTitle="Login" nzStatus="finish" nzIcon="anticon anticon-user"></nz-step>
+    <nz-step nzTitle="Verification" nzStatus="finish" nzIcon="anticon anticon-solution"></nz-step>
+    <nz-step nzTitle="Pay" nzStatus="process" nzIcon="anticon anticon-loading anticon-spin"></nz-step>
+    <nz-step nzTitle="Done" nzStatus="wait" [nzIcon]="iconTemplate"></nz-step>
+    <ng-template #iconTemplate>
+      <i class="anticon anticon-smile-o"></i>
+    </ng-template>
+  </nz-steps>
+</div>
+
+<div class="steps">
+  <nz-steps [nzCurrent]="current">
+    <nz-step nzTitle="Finished"></nz-step>
+    <nz-step nzTitle="In Progress"></nz-step>
+    <nz-step nzTitle="Waiting"></nz-step>
+  </nz-steps>
+
+  <div class="steps-content">{{current}}</div>
+
+  <div class="steps-action">
+    <button nz-button (click)="pre()" *ngIf="current > 0">Previous</button>
+    <button nz-button (click)="next()" *ngIf="current < 2">Next</button>
+    <button nz-button (click)="done()" *ngIf="current === 2">Done</button>
+  </div>
+</div>

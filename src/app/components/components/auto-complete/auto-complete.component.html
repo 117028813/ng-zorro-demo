@@ -1,0 +1,13 @@
+<div>
+  <input placeholder="input here" nz-input [(ngModel)]="inputValue" (input)="onInput($event.target?.value)" [nzAutocomplete]="auto">
+  <nz-autocomplete nzBackfill #auto>
+    <nz-auto-option *ngFor="let option of options" [nzValue]="option">{{option}}</nz-auto-option>
+  </nz-autocomplete>
+</div>
+
+<div>
+  <input placeholder="input here" nz-input [(ngModel)]="inputValue" (ngModelChange)="onChange($event)" [nzAutocomplete]="auto">
+  <nz-autocomplete #auto>
+    <nz-auto-option *ngFor="let option of options" [nzValue]="option">{{option}}</nz-auto-option>
+  </nz-autocomplete>
+</div>

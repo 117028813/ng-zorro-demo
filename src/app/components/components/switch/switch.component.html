@@ -1,0 +1,4 @@
+<nz-switch [(ngModel)]="switchValue" [nzDisabled]="isDisabled"></nz-switch>
+<button nz-button (click)="isDisabled = !isDisabled">Toggle Disabled</button>
+<nz-switch nzCheckedChildren="开" nzUnCheckedChildren="关"></nz-switch>
+<nz-switch [(ngModel)]="switchValue" [nzControl]="true" (click)="clickSwitch()" [nzLoading]="loading"></nz-switch>

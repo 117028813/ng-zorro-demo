@@ -1,0 +1,34 @@
+.basic {
+  margin-bottom: 16px;
+
+  [nz-col] {
+    padding: 16px 0;
+    color: #fff;
+    text-align: center;
+    background-color: #00a0e9;
+
+    &:nth-child(2n+1) {
+      background-color: rgba(0,160,233,.7);
+    }
+  }
+}
+
+.gutter {
+  margin-bottom: 16px;
+
+  .gutter-box {
+    color: #fff;
+    text-align: center;
+    background: #00a0e9;
+  }
+}
+
+.offset,
+.order,
+.flex {
+  .basic();
+}
+
+.flex {
+  background-color: #ccc;
+}

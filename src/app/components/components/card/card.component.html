@@ -1,0 +1,31 @@
+<nz-card style="width: 300px;" nzTitle="Card title" [nzExtra]="extraTemplate">
+  <p>Card Content</p>
+</nz-card>
+<ng-template #extraTemplate>
+  <a>More</a>
+</ng-template>
+
+<nz-card nzHoverable style="width: 240px;" [nzCover]="coverTemplate">
+  <nz-card-meta nzTitle="Europe Street beat" nzDescription="www.baidu.com"></nz-card-meta>
+</nz-card>
+<ng-template #coverTemplate>
+  <img src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png">
+</ng-template>
+
+<nz-card nzLoading nzTitle="Card title">Content</nz-card>
+
+<nz-card style="width:300px;" [nzCover]="coverTemplate" [nzActions]="[actionSetting, actionEdit, actionEllipsis]">
+  <nz-card-meta nzTitle="Card title" nzDescription="This is the description" [nzAvatar]="avatarTemplate"></nz-card-meta>
+</nz-card>
+<ng-template #avatarTemplate>
+  <nz-avatar nzSrc="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"></nz-avatar>
+</ng-template>
+<ng-template #actionSetting>
+  <i class="anticon anticon-setting"></i>
+</ng-template>
+<ng-template #actionEdit>
+  <i class="anticon anticon-edit"></i>
+</ng-template>
+<ng-template #actionEllipsis>
+  <i class="anticon anticon-ellipsis"></i>
+</ng-template>

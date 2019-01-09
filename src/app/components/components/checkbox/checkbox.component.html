@@ -1,0 +1,44 @@
+<div class="checkbox basic">
+  <label nz-checkbox [(ngModel)]="checked">Checkbox</label>
+</div>
+
+<div class="checkbox disabled">
+  <label nz-checkbox nzDisabled [ngModel]="false"></label>
+  <br>
+  <label nz-checkbox nzDisabled [ngModel]="true"></label>
+</div>
+
+<div class="checkbox control">
+  <p>
+    <label nz-checkbox [(ngModel)]="isCheckedButton" [nzDisabled]="isDisabledButton">
+      {{isCheckedButton ? 'Checked' : 'Unchecked'}} - {{isDisabledButton ? 'Disabled' : 'Enabled'}}
+    </label>
+  </p>
+  <p>
+    <button nz-button (click)="checkButton()">{{isCheckedButton ? 'Checked' : 'Unchecked'}}</button>
+    <button nz-button (click)="disableButton()">{{isDisabledButton ? 'Enabled' : 'Disabled'}}</button>
+  </p>
+</div>
+
+<div class="checkbox group">
+  <nz-checkbox-group [(ngModel)]="checkOptionsOne" (ngModelChange)="log(checkOptionsOne)"></nz-checkbox-group>
+</div>
+
+<div class="checkbox all">
+  <div>
+    <label nz-checkbox [(ngModel)]="allChecked" [nzIndeterminate]="indeterminate" (ngModelChange)="updateAllChecked()">Check All</label>
+  </div>
+  <nz-checkbox-group [(ngModel)]="checkOptionsOne" (ngModelChange)="updateSingleChecked()"></nz-checkbox-group>
+</div>
+
+<div class="checkbox layout">
+  <nz-checkbox-wrapper (nzOnChange)="log($event)">
+    <div nz-row>
+      <div nz-col nzSpan="8"><label nz-checkbox nzValue="A" [ngModel]="true">A</label></div>
+      <div nz-col nzSpan="8"><label nz-checkbox nzValue="B">B</label></div>
+      <div nz-col nzSpan="8"><label nz-checkbox nzValue="C">C</label></div>
+      <div nz-col nzSpan="8"><label nz-checkbox nzValue="D">D</label></div>
+      <div nz-col nzSpan="8"><label nz-checkbox nzValue="E">E</label></div>
+    </div>
+  </nz-checkbox-wrapper>
+</div>

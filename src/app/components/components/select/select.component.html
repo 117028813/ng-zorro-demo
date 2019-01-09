@@ -1,0 +1,34 @@
+<nz-select [(ngModel)]="selectedValue" nzAllowClear nzShowSearch  nzPlaceHolder="choose" style="width: 120px;" [nzDisabled]="isDisabled">
+  <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+  <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+  <nz-option nzValue="disabled" nzLabel="Disabled" nzDisabled></nz-option>
+</nz-select>
+
+<div class="control">
+  <button nz-button (click)="isDisabled = !isDisabled">Toggle Disabled</button>
+</div>
+
+<div>
+  <p>
+    {{selectedValue}}
+  </p>
+  <p>isDisabled: {{isDisabled}}</p>
+</div>
+
+<nz-select style="width: 100%;" nzMode="multiple" [nzMaxMultipleCount]="3" nzAllowClear nzPlaceHolder="Please select" [(ngModel)]="listOfSelectedValue">
+  <nz-option *ngFor="let option of listOfOption" [nzLabel]="option.label" [nzValue]="option.value"></nz-option>
+</nz-select>
+
+<nz-select style="width: 120px;" nzAllowClear nzPlaceHolder="choose" [(ngModel)]="selectedValue">
+  <nz-option-group nzLabel="Manager">
+    <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+    <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+  </nz-option-group>
+  <nz-option-group nzLabel="Enginner">
+    <nz-option nzValue="tom" nzLabel="Tom"></nz-option>
+  </nz-option-group>
+</nz-select>
+
+<p>
+  {{listOfSelectedValue}}
+</p>

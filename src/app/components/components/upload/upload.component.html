@@ -1,0 +1,11 @@
+<nz-upload [nzBeforeUpload]="beforeUpload" nzListType="picture-card">
+  <i class="anticon anticon-plus" style="font-size: 32px;"></i>
+</nz-upload>
+
+<div class="img-box">
+  <img *ngFor="let img of fileList" [src]="img.dataSrc">
+</div>
+
+<button nz-button (click)="handleUpload()" [disabled]="fileList.length === 0" [nzLoading]="uploading">
+  {{uploading ? 'Uploading' : 'Start Upload'}}
+</button>

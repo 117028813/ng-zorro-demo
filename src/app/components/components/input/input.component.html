@@ -1,0 +1,77 @@
+<div class="input basic">
+  <input nz-input placeholder="Basic usage" [(ngModel)]="basicValue">
+  <p>{{basicValue}}</p>
+</div>
+
+<div class="input pre-post">
+  <nz-input-group nzAddOnBefore="http://" nzAddOnAfter=".com">
+    <input nz-input [(ngModel)]="groupValue">
+  </nz-input-group>
+
+  <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate" [nzAddOnAfter]="addOnAfterTemplate">
+    <input nz-input [(ngModel)]="groupValue">
+    <ng-template #addOnBeforeTemplate>
+      <nz-select [(ngModel)]="addOnBeforeValue">
+        <nz-option nzLabel="http://" nzValue="http://"></nz-option>
+        <nz-option nzLabel="https://" nzValue="https://"></nz-option>
+      </nz-select>
+    </ng-template>
+    <ng-template #addOnAfterTemplate>
+      <nz-select ngModel=".com">
+        <nz-option nzLabel=".com" nzValue=".com"></nz-option>
+        <nz-option nzLabel=".cn" nzValue=".cn"></nz-option>
+      </nz-select>
+    </ng-template>
+  </nz-input-group>
+
+  <nz-input-group nzAddOnAfterIcon="anticon anticon-setting">
+    <input nz-input [(ngModel)]="groupValue">
+  </nz-input-group>
+
+  <p>{{groupValue}}</p>
+  <p>{{addOnBeforeValue}}</p>
+</div>
+
+<div class="input group">
+  <nz-input-group>
+    <div nz-col nzSpan="4">
+      <input nz-input ngModel="024">
+    </div>
+    <div nz-col nzSpan="8">
+      <input nz-input ngModel="86267085">
+    </div>
+  </nz-input-group>
+  <br>
+  <nz-input-group>
+    <nz-select ngModel="Home" nz-col nzSpan="4">
+      <nz-option nzLabel="Home" nzValue="Home"></nz-option>
+      <nz-option nzLabel="Company" nzValue="Company"></nz-option>
+    </nz-select>
+    <div nz-col nzSpan="8">
+      <nz-cascader [nzOptions]="options" style="width: 100%;"></nz-cascader>
+    </div>
+  </nz-input-group>
+</div>
+
+<div class="input search" nz-col nzSpan="12">
+  <nz-input-group nzSuffixIcon="anticon anticon-search">
+    <input nz-input placeholder="input search text">
+  </nz-input-group>
+
+  <nz-input-group nzSearch [nzSuffix]="suffixIconButton">
+    <input nz-input placeholder="input search text">
+  </nz-input-group>
+  <ng-template #suffixIconButton>
+    <button nz-button nzType="primary" nzSearch>
+      <i class="anticon anticon-search"></i>
+    </button>
+  </ng-template>
+</div>
+
+<div class="input textarea">
+  <textarea row="4" nz-input [(ngModel)]="textareaValue"></textarea>
+  <p>{{textareaValue}}</p>
+
+  <textarea nz-input placeholder="Autosize height based on content lines" nzAutosize style="width: 30%;"></textarea>
+  <textarea nz-input placeholder="Autosize height with minimun and maximum number of lines" [nzAutosize]="{minRows: 2, maxRows: 6}" style="width: 30%;"></textarea>
+</div>

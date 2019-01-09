@@ -1,0 +1,52 @@
+<div class="basic">
+  <p>按钮类型</p>
+  <button nz-button>Default</button>
+  <button nz-button nzType="primary">Primary</button>
+  <button nz-button nzType="dashed">Dashed</button>
+  <button nz-button nzType="danger">Danger</button>
+  <button nz-button disabled>Disabled</button>
+</div>
+
+<div class="icon">
+  <p>图标按钮</p>
+  <button nz-button nzShape="circle">
+    <i class="anticon anticon-search"></i>
+  </button>
+
+  <button nz-button>
+    <i class="anticon anticon-search"></i>
+    Search
+  </button>
+</div>
+
+<div class="size">
+  <p>按钮尺寸</p>
+  <button nz-button nzSize="small">Small</button>
+  <button nz-button>Normal</button>
+  <button nz-button nzSize="large">Large</button>
+</div>
+
+<div class="loading">
+  <p>加载中状态</p>
+  <button nz-button [nzLoading]="isLoadingOne" (click)="loadOne()">Click me!</button>
+  <button nz-button [nzLoading]="isLoadingTwo" (click)="loadTwo()">
+    <i class="anticon anticon-poweroff"></i>Click me!
+  </button>
+  <button nz-button nzShape="circle" [nzLoading]="isLoadingThree" (click)="loadThree()">
+    <i class="anticon anticon-poweroff"></i>
+  </button>
+</div>
+
+<div class="group">
+  <p>按钮组合</p>
+  <nz-button-group>
+    <button nz-button>Cancel</button>
+    <button nz-button>OK</button>
+  </nz-button-group>
+</div>
+
+<div class="ghost">
+  <p>幽灵按钮</p>
+  <button nz-button nzGhost>A</button>
+  <button nz-button nzGhost>B</button>
+</div>
